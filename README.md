@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 🚀 MERN Microservices Deployment on Elastic Kubernetes Service (EKS) with Helm, Jenkins, and MERN App
 
 This project demonstrates deploying a **MERN application** (React frontend + Node.js microservices + MongoDB Atlas) on **Azure Kubernetes Service (EKS)**.
@@ -842,3 +843,7 @@ This project is released under the MIT License, granting you the freedom to:
 <div align="center">
   <p>Built with ❤️ by Sagar Patel</p>
 </div>
+=======
+# ContainerOrchestration1
+Set Up the AWS Environment, Continuous Integration with Jenkins, Kubernetes (EKS) Deployment
+>>>>>>> 5bef461dc13825245d997b9d3ef30682fd143b44
