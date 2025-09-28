@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## 🚀 MERN Microservices Deployment on Elastic Kubernetes Service (EKS) with Helm, Jenkins, and MERN App
 
 This project demonstrates deploying a **MERN application** (React frontend + Node.js microservices + MongoDB Atlas) on **Azure Kubernetes Service (EKS)**.
@@ -7,7 +7,7 @@ This project demonstrates deploying a **MERN application** (React frontend + Nod
 
 ### 📂 Project Structure
 ```
-mern-microservices-starter
+ContainerOrchestration1
 ├── Jenkinsfile
 ├── README.md
 ├── backend
@@ -116,7 +116,7 @@ kubectl apply -f k8s/namespace.yaml
 ![namespace k8s](/images/namespace-ui.png)
 
 #### 📂 Backend Repository Identification
-🔗 **Repository**: `https://github.com/psagar-dev/mern-microservices-starter`
+🔗 **Repository**: `https://github.com/jas-nurturing-stage/ContainerOrchestration1`
 
 **Purpose:** This repository contains the backend code for the MERN application, built with Node.js and Express.js, handling API requests, MongoDB interactions, and authentication.
 
@@ -128,7 +128,7 @@ Technologies:
 - **Mongoose**: ODM for MongoDB.
 
 ```bash
-git clone https://github.com/psagar-dev/mern-microservices-starter.git
+git clone https://github.com/jas-nurturing-stage/ContainerOrchestration1.git
 ```
 For `Hello Service`
 ```bash
@@ -144,7 +144,7 @@ npm install
 npm start
 ```
 #### 📂 Frontend Repository Identification
-🔗 **Repository**: `https://github.com/psagar-dev/mern-microservices-starter`
+🔗 **Repository**: `https://github.com/jas-nurturing-stage/ContainerOrchestration1`
 
 **Purpose**: This repository contains the frontend code for the MERN application, built with React, providing a user interface for interacting with the backend APIs.
 
@@ -156,7 +156,7 @@ Technologies:
 - **Nginx**: For serving the production build.
 
 ```bash
-git clone https://github.com/psagar-dev/mern-microservices-starter.git
+git clone https://github.com/jas-nurturing-stage/ContainerOrchestration1.git
 cd backend/frontend
 npm install
 npm run dev
@@ -209,19 +209,19 @@ CMD ["node", "index.js"]
 ### 🔍 Local Testing & Validation
 Build the Docker image:
 ```
-docker image build --no-cache --network=mernapp -t securelooper/mern-microservices-hello .
+docker image build --no-cache --network=mernapp -t docjas143/mern-microservices-hello .
 ```
 ![mern Hello microservices](/images/mern-hello-build.png)
 
 
 Push the image to Docker Hub.
 ```
-docker image push securelooper/mern-microservices-hello
+docker image push docjas143/mern-microservices-hello
 ```
 
 Run the container:
 ```
-docker container run -d --name mern-microservices-hello -e PORT=3001 -p 3001:3001 securelooper/mern-microservices-hello
+docker container run -d --name mern-microservices-hello -e PORT=3001 -p 3001:3001 docjas143/mern-microservices-hello
 ```
 **Base URL:** `http://localhost:3001`
 ![mern Hello microservices live](/images/mern-hello-live.png)
@@ -277,7 +277,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: mern-microservices-hello
-        image: securelooper/mern-microservices-hello:latest
+        image: docjas143/mern-microservices-hello:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3001
@@ -424,18 +424,18 @@ CMD ["node", "index.js"]
 ### 🔍 Local Testing & Validation
 Build the Docker image:
 ```
-docker image build --no-cache -t securelooper/mern-microservices-profile .
+docker image build --no-cache -t docjas143/mern-microservices-profile .
 ```
 ![mern Profile microservices](/images/mern-profile-build.png)
 
 Push the image to Docker Hub.
 ```
-docker image push securelooper/mern-microservices-profile
+docker image push docjas143/mern-microservices-profile
 ```
 
 Run the container:
 ```
-docker container run -d --name mern-microservices-profile --network=mernapp -e PORT=3002 -e MONGO_URL="mongodb://root:root@192.168.31.100:27017/mern-microservices?authSource=admin" -p 3002:3002 securelooper/mern-microservices-profile
+docker container run -d --name mern-microservices-profile --network=mernapp -e PORT=3002 -e MONGO_URL="mongodb://root:root@192.168.31.100:27017/mern-microservices?authSource=admin" -p 3002:3002 docjas143/mern-microservices-profile
 ```
 **Base URL:** `http://localhost:3002`
 ![mern profile microservices live](/images/mern-profile-live.png)
@@ -492,7 +492,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: mern-microservices-profile
-        image: securelooper/mern-microservices-profile:latest
+        image: docjas143/mern-microservices-profile:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3002
@@ -644,19 +644,19 @@ CMD ["nginx", "-g", "daemon off;"]
 ### 🔍 Local Testing & Validation
 Build the Docker image:
 ```
-docker image build --build-arg REACT_APP_API_BASE_URL_HELLO=http://192.168.31.100:3001 --build-arg REACT_APP_API_BASE_URL_PROFILE=http://192.168.31.100:3002 -t securelooper/mern-microservices-frontend .
+docker image build --build-arg REACT_APP_API_BASE_URL_HELLO=http://192.168.31.100:3001 --build-arg REACT_APP_API_BASE_URL_PROFILE=http://192.168.31.100:3002 -t docjas143/mern-microservices-frontend .
 ```
 ![mern Frontend](/images/mern-frontend-build.png)
 
 
 Push the image to Docker Hub.
 ```
-docker image push securelooper/mern-microservices-frontend
+docker image push docjas143/mern-microservices-frontend
 ```
 
 Run the container:
 ```
-docker container run -d --name mern-microservices-frontend -p 3000:80 securelooper/mern-microservices-frontend
+docker container run -d --name mern-microservices-frontend -p 3000:80 docjas143/mern-microservices-frontend
 ```
 **Base URL:** `http://localhost:3000`
 ![mern Frontend live](/images/mern-frontend-live.png)
@@ -690,7 +690,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: mern-microservices-frontend
-        image: securelooper/mern-microservices-frontend:latest
+        image: docjas143/mern-microservices-frontend:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 80
@@ -833,17 +833,13 @@ This project is released under the MIT License, granting you the freedom to:
 
 ## 📞 Contact
 
-📧 Email: [Email Me](securelooper@gmail.com
+📧 Email: [Email Me](sk.jasminesaheb@gmail.com
 )
-🔗 LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/sagar-93-patel)  
-🐙 GitHub: [GitHub Profile](https://github.com/psagar-dev)  
+🔗 LinkedIn: [LinkedIn Profile]  
+🐙 GitHub: [GitHub Profile](https://github.com/jas-nurturing-stage)  
 
 ---
 
 <div align="center">
-  <p>Built with ❤️ by Sagar Patel</p>
+  <p>Built with ❤️ by Jasmine Shaik</p>
 </div>
-=======
-# ContainerOrchestration1
-Set Up the AWS Environment, Continuous Integration with Jenkins, Kubernetes (EKS) Deployment
->>>>>>> 5bef461dc13825245d997b9d3ef30682fd143b44
