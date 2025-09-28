@@ -25,11 +25,11 @@ appVersion: "1.16.0"
 
 keywords:
   - MERN
-  - insights
+  - Microservices
   
 maintainers:
-  - name: Sagar Patel
-    email: securelooper@gmail.com
+  - name: Jasmie Shaik
+    email: sk.jasminesaheb@gmail.com
 
 sources:
-  - https://github.com/psagar-dev/infra-learner-insights.git
+  - https://github.com/jas-nurturing-stage/ContainerOrchestration1.git

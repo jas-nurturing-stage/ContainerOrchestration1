@@ -5,7 +5,7 @@ fullnameOverride: "mern-microservice-profile"
 
 # Docker image settings
 image:
-  repository: securelooper/mern-microservices-profile
+  repository: docjas143/mern-microservices-profile
   tag: latest # Change to a specific version/tag in production!
   pullPolicy: Always
 

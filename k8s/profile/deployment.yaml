@@ -22,7 +22,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: mern-microservices-profile
-        image: securelooper/mern-microservices-profile:latest
+        image: docjas143/mern-microservices-profile:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3002

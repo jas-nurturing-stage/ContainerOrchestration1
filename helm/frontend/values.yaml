@@ -5,7 +5,7 @@ fullnameOverride: "mern-microservice-frontend"
 
 # Docker image settings
 image:
-  repository: securelooper/mern-microservices-frontend
+  repository: docjas143/mern-microservices-frontend
   tag: latest
   pullPolicy: Always
 

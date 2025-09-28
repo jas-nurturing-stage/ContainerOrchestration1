@@ -5,7 +5,7 @@ fullnameOverride: "mern-microservice-hello"
 
 # Docker image settings
 image:
-  repository: securelooper/mern-microservices-hello
+  repository: docjas143/mern-microservices-hello
   tag: latest # Change to a specific version/tag in production!
   pullPolicy: Always
 

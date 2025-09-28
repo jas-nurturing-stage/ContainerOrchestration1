@@ -9,7 +9,7 @@ app.disable('etag');
 app.use(express.json());
 app.get('/', (req, res) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
-  res.send({ msg: 'Hello World' })
+  res.send({ msg: 'Hello CONTAINERIZATION' })
 })
 app.get('/health', (req, res) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
